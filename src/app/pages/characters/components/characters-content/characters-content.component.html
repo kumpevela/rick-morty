@@ -1,5 +1,6 @@
 <div>
-    <div *ngFor="let character of charactersList">
+    <div *ngFor="let character of charactersList" class="character-card"
+    routerLink="{{character.id}}">
         <h1>{{ character.id }} - {{ character.name }}</h1>
         <img src="{{character.image}}" alt="{{character.name}}">
     </div>

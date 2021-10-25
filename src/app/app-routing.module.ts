@@ -12,6 +12,10 @@ const routes: Routes = [
     import('./pages/characters/characters.module').then(m => m.CharactersModule)
   },
   {
+    path:'characters/:idCharacter', loadChildren: () => import('./pages/characters-page-detail/characters-page-detail.module').then
+    ((m) => m.CharactersPageDetailModule)
+  },
+  {
     path:'localizaciones', loadChildren: () =>
     import('./pages/localizaciones/localizaciones.module').then(m => m.LocalizacionesModule)
   },
@@ -23,7 +27,7 @@ const routes: Routes = [
     path:'about', loadChildren: () =>
     import('./pages/about/about.module').then(m => m.AboutModule)
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
